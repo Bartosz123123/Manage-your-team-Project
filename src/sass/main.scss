@@ -1,0 +1,108 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--font: 'Nunito Sans', sans-serif;
+}
+
+[data-mode='light'] {
+	--main-color: #fff;
+	--heading-text-color: #fff;
+	--second-text-color: #000;
+	--link-color: #0752ae;
+	--border-button-color: #0065ff;
+	--button-hover-color: #deebff;
+	--second-border-button-color: #00b8d9;
+	--second-button-hover-color: #e6fcff;
+	--footer-color: #172b4d;
+}
+
+[data-mode='dark'] {
+	--main-color: #000000;
+	--heading-text-color: #fff;
+	--second-text-color: #000;
+	--link-color: #ae6307;
+	--border-button-color: #ff9a00;
+	--button-hover-color: #fff2de;
+	--second-border-button-color: #d92100;
+	--second-button-hover-color: #ffe9e6;
+	--footer-color: #172b4d;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: var(--font);
+}
+
+//================= NAV =========================
+.mobile-nav {
+	.nav-box {
+		// background-color: red;
+		.box {
+			padding: 16px;
+			padding-bottom: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.dropdown-menu {
+			padding: 0 16px;
+			width: 100vw;
+			height: 0;
+			// height: calc(100vh - 88px);
+			overflow: hidden;
+			transition: height 0.5s;
+			// background-color: red;
+
+			ul {
+				list-style: none;
+				.items {
+					border-top: 1px solid rgb(223, 225, 230);
+					// border-bottom: 1px solid rgb(223, 225, 230);
+					.btn {
+						padding: 20px 20px 20px 0;
+						font-size: 2rem;
+						background: none;
+						border: none;
+					}
+				}
+
+				.items:last-of-type {
+					border-bottom: 1px solid rgb(223, 225, 230);
+				}
+			}
+
+			.btns {
+				.btn {
+					padding: 16px;
+					width: 100%;
+					font-size: 2rem;
+				}
+
+				.get-free {
+					margin-top: 20px;
+					color: var(--heading-text-color);
+					background-color: var(--border-button-color);
+					border: 1px solid transparent;
+				}
+
+				.log-in {
+					margin-top: 15px;
+					background-color: var(--main-color);
+					border: 1px solid var(--border-button-color);
+				}
+			}
+		}
+
+		.active-dropdown {
+			height: calc(100vh - 88px);
+		}
+	}
+}
+
+@import './small';
+@import './medium';
+@import './large';
