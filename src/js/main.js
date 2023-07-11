@@ -1,32 +1,23 @@
 const burgerBtn = document.querySelector('.hamburger');
 const dropdownMenu = document.querySelector('.dropdown-menu');
-const slideRightNav = document.querySelector('.slide-right');
-const featuresBtn = document.querySelector('.features-btn');
-const slideLeft = document.querySelector('.container-animation');
-const featuresSection = document.querySelector('.fratures');
+const rightMenu = document.querySelector('.features-menu');
+const featuresBtn = document.querySelector('.features');
 
 const handleBurgerBtn = () => {
 	burgerBtn.classList.toggle('is-active');
-	dropdownMenu.classList.toggle('active-dropdown');
+	dropdownMenu.classList.toggle('menu-active');
 	setTimeout(() => {
-		slideRightNav.classList.remove('active-slide-right');
+		rightMenu.classList.remove('active-right-menu');
 	}, 500);
-	slideLeft.classList.remove('slide-left-dropdown');
-	dropdownMenu.classList.remove('overflow-off');
-	featuresSection.classList.remove('overflow-on');
 };
 
-const activeFeatures = () => {
-	slideRightNav.classList.add('active-slide-right');
-	slideLeft.classList.add('slide-left-dropdown');
-	featuresSection.classList.add('overflow-on');
-	dropdownMenu.classList.add('overflow-off');
+const handleRightMenu = () => {
+	rightMenu.classList.add('active-right-menu');
 };
 
 if (featuresBtn !== null) {
-	featuresBtn.addEventListener('click', activeFeatures);
+	featuresBtn.addEventListener('click', handleRightMenu);
 }
-
 if (burgerBtn !== null) {
 	burgerBtn.addEventListener('click', handleBurgerBtn);
 }
