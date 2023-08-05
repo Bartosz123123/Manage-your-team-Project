@@ -1,0 +1,63 @@
+@media (min-width: 768px) {
+	.mobile-nav {
+		.nav-box {
+			.box {
+				padding: 16px 30px 0;
+			}
+			.dropdown-menu {
+				padding: 0 15px;
+				.all-menu {
+					padding: 0 15px;
+				}
+				.resources-menu {
+					.container {
+						.blog {
+							.animation-box {
+								.trello-title {
+									font-size: 2rem;
+								}
+								.trello-text {
+									font-size: 1.6rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.mobile-nav {
+		display: none;
+	}
+	.desktop-nav {
+		display: block;
+		.desktop-box {
+			.container {
+				max-width: 1320px;
+				margin: 0 auto;
+			}
+
+			.desktop-dropdown {
+				.dropdown-container {
+				
+					.frame {
+						.main-dropdown {
+							.box {
+								.links {
+									padding-top: 10px;
+								}
+							}
+						}
+
+						.trello-dropdown {
+							padding: 10px 30px 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+@media (min-width: 1200px) {
+	.desktop-nav {
+		.desktop-box {
+			.desktop-dropdown {
+				.dropdown-container {
+					.frame {
+						.main-dropdown {
+							width: 60%;
+							.box {
+								max-width: 760px;
+								margin: 0 40px 0 auto;
+
+								.title {
+									font-size: 1.8rem;
+								}
+
+								.links {
+									padding-left: 25px;
+									.link {
+										padding: 30px 7px;
+										max-width: 215px;
+									}
+								}
+							}
+						}
+
+						.trello-dropdown {
+							padding: 30px 30px 60px;
+							width: 40%;
+							.box {
+								.trello-title {
+									font-size: 1.8rem;
+								}
+
+								.text {
+									font-size: 1.4rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

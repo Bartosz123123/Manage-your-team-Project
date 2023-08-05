@@ -39,28 +39,82 @@ html {
 	font-family: var(--font);
 }
 
-//================= NAV =========================
+//================= NAV MOBILE =========================
 .mobile-nav {
+	display: block;
 	.nav-box {
 		.box {
+			position: relative;
 			padding: 16px;
 			padding-bottom: 0;
 			display: flex;
 			justify-content: space-between;
+
+			.logo {
+				display: inline-block;
+				transform: translateX(0);
+				opacity: 1;
+			}
+
+			.back {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				transform: translateX(100px);
+				font-size: 24px;
+				opacity: 0;
+
+				.back-btn {
+					padding: 20px;
+					font-size: 2rem;
+					color: var(--links-color);
+					border: none;
+					background: none;
+					// visibility: hidden;
+
+					span {
+						margin-right: 10px;
+					}
+				}
+			}
+
+			.logo-start-animation {
+				animation: logoEntranceAnimation 0.5s forwards;
+			}
+
+			.logo-exit-animation {
+				animation: logoExitAnimation 0.5s forwards;
+			}
+
+			.slide-start-animation {
+				animation: entranceAnimation 0.5s forwards;
+			}
+
+			.slide-exit-animation {
+				animation: exitAnimation 0.5s forwards;
+			}
 		}
 
 		.dropdown-menu {
 			position: relative;
 			height: 0;
-			transition: height 0.5s;
+			transition: height 0.5s, transform 0.5s;
 			overflow: hidden;
+
 			.dropdown-box {
+				padding-bottom: 20px;
+				height: 100%;
+				transition: transform 0.5s;
+				overflow: scroll;
 				.buttons-box {
 					display: flex;
 					flex-direction: column;
 					padding: 0 16px;
 					.btn {
-						padding: 18px 0;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						padding: 23px 18px 23px 0;
 						text-align: left;
 						font-size: 2rem;
 						color: var(--links-color);
@@ -99,16 +153,180 @@ html {
 				}
 			}
 
-			.features-menu {
+			.slide-left {
+				transform: translateX(-1200px);
+			}
+
+			.all-menu {
 				position: absolute;
 				top: 0;
 				left: 0;
 				height: 100%;
 				width: 100%;
-				transform: translateX(1000px);
-				background-color: red;
+				transform: translateX(1200px);
+				background-color: var(--main-color);
 				transition: transform 0.5s;
 				z-index: 1;
+				overflow: scroll;
+
+				.container {
+					padding: 0 16px 16px;
+
+					.features-header {
+						padding: 23px 16px 23px 0;
+						font-size: 1.6rem;
+						border-bottom: 1px solid rgb(223, 225, 230);
+						border-top: 1px solid rgb(223, 225, 230);
+					}
+
+					.boxes {
+						border-bottom: 1px solid rgb(223, 225, 230);
+						.link {
+							display: block;
+							padding: 16px 16px 16px 0;
+							text-decoration: none;
+							.link-name {
+								display: flex;
+								align-items: center;
+								padding: 10px 10px 10px 0;
+								font-size: 1.6rem;
+								color: var(--links-color);
+								span {
+									display: block;
+									width: 20px;
+									margin-right: 10px;
+									color: var(--icon-color);
+								}
+							}
+
+							.link-text {
+								font-size: 1.2rem;
+							}
+						}
+
+						.solutions-link {
+							display: flex;
+							align-items: center;
+							padding: 23px 16px 23px 0;
+							font-size: 1.6rem;
+							color: var(--links-color);
+							font-weight: bold;
+							text-decoration: none;
+							span {
+								display: flex;
+								margin-left: 10px;
+							}
+						}
+					}
+
+					.box-meet-trello {
+						margin-top: 20px;
+						padding: 24px;
+						line-height: 1.5;
+						border-radius: 10px;
+						background-color: rgba(234, 230, 255, 0.4);
+						.trello-title {
+							color: var(--links-color);
+							margin-bottom: 8px;
+							font-size: 1.6rem;
+						}
+
+						.trello-text {
+							font-size: 1.2rem;
+							color: #abb4c4;
+						}
+
+						.trello-link {
+							display: inline-block;
+							margin-top: 15px;
+							padding: 13px 16px;
+							text-decoration: none;
+							color: var(--links-color);
+							background-color: #fff;
+							border-radius: 3px;
+							border: 1px solid rgb(101, 84, 192);
+							font-size: 1.6rem;
+						}
+					}
+				}
+			}
+
+			.plans-menu {
+				.container {
+					.boxes {
+						.link {
+							.link-name {
+								.bulb {
+									width: 15px;
+									color: rgb(121, 226, 242);
+								}
+								.star {
+									width: 20px;
+									color: rgb(249, 156, 219);
+								}
+								.building {
+									width: 30px;
+									color: rgb(76, 154, 255);
+								}
+
+								span {
+									display: flex;
+									// align-items: center;
+								}
+							}
+						}
+					}
+					.free-plan {
+						background-color: rgba(255, 250, 229, 0.4);
+						.trello-title {
+							display: flex;
+							align-items: center;
+							span {
+								margin: 0 10px;
+								width: 13px;
+								color: rgb(255, 196, 0);
+							}
+						}
+
+						.trello-link {
+							border: 1px solid rgb(255, 171, 0);
+						}
+					}
+				}
+				.boxes:first-of-type {
+					border-top: 1px solid rgb(223, 225, 230);
+				}
+			}
+
+			.resources-menu {
+				.container {
+					.features-header {
+						border-top: 1px solid rgb(223, 225, 230);
+					}
+					.blog {
+						padding-bottom: 0px;
+						.animation-box {
+							padding-bottom: 35px;
+							border-radius: 6px;
+							opacity: 0.3;
+							animation: pulseAnimation 3s infinite;
+							background-color: var(--footer-color);
+
+							.trello-text {
+								font-size: 1.2rem;
+								color: #abb4c4;
+							}
+						}
+
+						.trello-link {
+							position: relative;
+							margin-top: 0;
+							transform: translateY(-35px);
+							animation: pulseAnimation 3s infinite;
+							z-index: 1;
+						}
+					}
+				}
 			}
 
 			.active-right-menu {
@@ -116,9 +334,380 @@ html {
 			}
 		}
 
+		.slide-menu {
+			transform: translateX(-1200px);
+		}
+
 		.menu-active {
 			height: calc(100vh - 74px);
 		}
+	}
+}
+
+//================= NAV MOBILE ==========================
+
+//================= NAV DESKTOP =========================
+.desktop-nav {
+	display: none;
+	.desktop-box {
+		.container {
+			display: flex;
+			justify-content: space-between;
+			.frame {
+				display: flex;
+				align-items: center;
+				.desktop-logo {
+					margin-right: 10px;
+					// padding-left: 20px;
+					padding: 15px 10px 10px 25px;
+					cursor: pointer;
+				}
+
+				.links {
+					// display: flex;
+					// justify-content: center;
+					// align-items: center;
+					ul {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						list-style: none;
+						li {
+							.btn {
+								padding: 18px;
+								font-size: 1.6rem;
+								background: none;
+								border: none;
+								text-decoration: none;
+								font-family: var(--font);
+								color: var(--links-color);
+								cursor: pointer;
+								span {
+									padding-left: 5px;
+									svg {
+										width: 10px;
+									}
+								}
+							}
+
+							.btn:hover {
+								color: var(--link-color);
+							}
+						}
+					}
+				}
+			}
+
+			.btns {
+				display: flex;
+				.btn {
+					padding: 16px;
+					font-size: 2rem;
+					border: none;
+					font-family: var(--font);
+					cursor: pointer;
+				}
+
+				.login {
+					background: none;
+				}
+
+				.free {
+					background-color: var(--border-button-color);
+					color: #fff;
+					transition: background-color 0.3s;
+				}
+
+				.free:hover {
+					background-color: var(--link-color);
+				}
+			}
+		}
+
+		.desktop-dropdown {
+			.dropdown-container {
+				// display: flex;
+				max-height: 0;
+				transition: max-height 0.3s ease;
+
+				overflow: hidden;
+
+				.frame {
+					display: none;
+					width: 100%;
+
+					.main-dropdown {
+						padding: 30px 0 30px 0;
+						width: 70%;
+						box-shadow: rgba(9, 30, 66, 0.15) 0px 1.5rem 1rem -1rem inset;
+						// overflow: hidden;
+
+						.box {
+							max-width: 694.39px;
+							margin-left: auto;
+
+							.title {
+								padding: 10px 0 20px 0;
+								margin: 0 30px;
+								font-size: 1.6rem;
+								color: var(--links-color);
+								border-bottom: 1px solid rgb(223, 225, 230);
+							}
+
+							.links {
+								display: flex;
+								flex-wrap: wrap;
+								gap: 5px;
+								padding-left: 10px;
+
+								.link {
+									display: inline-block;
+									padding: 30px 14px;
+
+									max-width: 204px;
+									text-decoration: none;
+
+									.title-link {
+										position: relative;
+										display: flex;
+										align-items: center;
+										padding-bottom: 5px;
+										font-size: 1.6rem;
+										color: var(--links-color);
+										z-index: -1;
+
+										span {
+											padding-right: 10px;
+											svg {
+												width: 20px;
+												color: var(--icon-color);
+											}
+										}
+									}
+
+									.text {
+										position: relative;
+										font-size: 1.2rem;
+										color: var(--icon-color);
+										z-index: -1;
+									}
+								}
+							}
+							.see-all-link {
+								display: flex;
+								align-items: center;
+								margin-left: 14px;
+								padding-left: 14px;
+								max-width: 145px;
+								font-size: 1.6rem;
+								color: var(--links-color);
+								text-decoration: none;
+								font-weight: bold;
+
+								span {
+									display: flex;
+									transition: transform 0.3s;
+								}
+							}
+
+							.see-all-link:hover {
+								span {
+									transform: translateX(10px);
+								}
+							}
+						}
+					}
+					.trello-dropdown {
+						padding: 10px;
+						width: 30%;
+						background-color: #f7f5ff;
+						box-shadow: rgba(9, 30, 66, 0.15) 0px 1.5rem 1rem -1rem inset;
+						// overflow: hidden;
+
+						.box {
+							max-width: 317px;
+
+							.trello-title {
+								margin: 10px 0;
+								padding-bottom: 20px;
+								font-size: 1.6rem;
+								color: var(--footer-color);
+								border-bottom: 1px solid rgb(223, 225, 230);
+								border-bottom-color: rgb(153, 141, 217);
+							}
+
+							.text {
+								padding-top: 10px;
+								font-size: 1.2rem;
+								color: rgb(80, 95, 121);
+							}
+
+							.trello-btn {
+								margin-top: 40px;
+								background: none;
+								border: none;
+								cursor: pointer;
+
+								a {
+									display: inline-block;
+									padding: 15px 20px;
+									font-size: 1.6rem;
+									color: var(--icon-color);
+									border: 1px solid blue;
+									border-radius: 6px;
+									background-color: var(--main-color);
+									text-decoration: none;
+									transition: 0.3s;
+								}
+							}
+
+							.trello-btn:hover {
+								a {
+									background-color: #eae6ff;
+								}
+							}
+
+							.use-case-links {
+								.use-link {
+									display: inline-block;
+									padding: 20px 0;
+									font-size: 1.6rem;
+									color: var(--links-color);
+									text-decoration: none;
+
+									.link-title {
+										display: flex;
+										align-items: center;
+										padding-bottom: 10px;
+										span {
+											display: none;
+											margin-left: 5px;
+											color: #6554c0;
+										}
+									}
+
+									.link-text {
+										font-size: 1.2rem;
+									}
+								}
+
+								.use-link:hover {
+									.link-title {
+										span {
+											display: inline-flex;
+										}
+									}
+								}
+							}
+
+							.see-all-link {
+								display: flex;
+								align-items: center;
+								margin-top: 10px;
+								max-width: 165px;
+								font-size: 1.6rem;
+								color: var(--links-color);
+								text-decoration: none;
+								font-weight: bold;
+								span {
+									display: flex;
+									transition: transform 0.3s;
+								}
+							}
+
+							.see-all-link:hover {
+								span {
+									transform: translateX(10px);
+								}
+							}
+						}
+					}
+				}
+
+				.active {
+					display: flex;
+					animation: showAnimation 0.5s forwards;
+				}
+			}
+
+			// .desktop-features-dropdown {
+			// 	height: 0;
+			// }
+
+			// .is-active-dropdown {
+			// 	// height: 400px;
+			// }
+		}
+	}
+}
+//================= NAV MOBILE ==========================
+
+@keyframes showAnimation {
+	from {
+		opacity: 0.5;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes pulseAnimation {
+	0% {
+		opacity: 0.3;
+	}
+	50% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 0.3;
+	}
+}
+
+@keyframes logoExitAnimation {
+	from {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	to {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+}
+
+@keyframes logoEntranceAnimation {
+	from {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entranceAnimation {
+	from {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes exitAnimation {
+	from {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	to {
+		transform: translateX(100px);
+		opacity: 0;
 	}
 }
 
