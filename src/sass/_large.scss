@@ -21,6 +21,21 @@
 										max-width: 215px;
 									}
 								}
+
+								.mini-banner {
+									max-width: 712px;
+									height: 120px;
+
+									.banner-container {
+										display: flex;
+										flex-direction: row;
+										align-items: flex-start;
+										justify-content: space-between;
+										gap: 30px;
+									}
+								}
+
+								
 							}
 						}
 
@@ -34,6 +49,20 @@
 
 								.text {
 									font-size: 1.4rem;
+								}
+
+								.img-box{
+									width: 280px;
+									height: 300px;
+
+									.img-text-box{
+										.mini-title{
+											font-size: 1.4rem;
+										}
+										.img-text{
+											font-size: 1.8rem;
+										}
+									}
 								}
 							}
 						}

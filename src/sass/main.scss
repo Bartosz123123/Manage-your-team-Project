@@ -515,6 +515,62 @@ html {
 									transform: translateX(10px);
 								}
 							}
+
+							.mini-banner {
+								padding: 24px;
+								max-width: 592px;
+								background-color: rgb(255, 250, 229, 0.4);
+
+								.banner-container {
+									display: flex;
+									flex-direction: column;
+									align-items: flex-start;
+									gap: 30px;
+									.text-box {
+										.banner-title {
+											font-size: 1.8rem;
+											padding-bottom: 4px;
+
+											span {
+												margin-right: 10px;
+												color: #ffc400;
+												svg {
+													height: 20px;
+												}
+											}
+										}
+
+										.text {
+											font-size: 1.2rem;
+											color: var(--icon-color);
+										}
+									}
+
+									.banner-btn {
+										background: none;
+										border: none;
+										cursor: pointer;
+
+										.banner-link {
+											display: inline-block;
+											padding: 15px 20px;
+											font-size: 1.6rem;
+											color: var(--links-color);
+											border: 1px solid rgb(255, 171, 0);
+											border-radius: 6px;
+											background-color: var(--main-color);
+											text-decoration: none;
+											transition: background-color 0.3s;
+										}
+									}
+
+									.banner-btn:hover {
+										.banner-link {
+											background-color: rgb(255, 250, 229, 0.4);
+										}
+									}
+								}
+							}
 						}
 					}
 					.trello-dropdown {
@@ -619,6 +675,48 @@ html {
 								span {
 									transform: translateX(10px);
 								}
+							}
+
+							.img-box {
+								display: block;
+								margin: 30px 0 20px;
+								height: 280px;
+								width: 240px;
+								color: var(--links-color);
+								border-radius: 3px;
+								text-decoration: none;
+								overflow: hidden;
+								transition: box-shadow 0.3s;
+
+								.img {
+									width: 100%;
+									height: 45%;
+									background-image: url('https://blog.trello.com/hs-fs/hubfs/How_To_Use_Trello_And_Confluence_Together_For_Optimized_Project_Management.png');
+									background-position: center;
+									background-size: cover;
+									background-repeat: no-repeat;
+								}
+
+								.img-text-box {
+									padding: 8px 16px;
+									height: 55%;
+									background-color: var(--main-color);
+
+									.mini-title {
+										font-size: 1.2rem;
+										text-transform: uppercase;
+										color: var(--icon-color);
+									}
+
+									.img-text {
+										padding-top: 12px;
+										font-size: 1.6rem;
+									}
+								}
+							}
+
+							.img-box:hover {
+								box-shadow: 0px 5px 15px rgb(0 0 0 / 25%);
 							}
 						}
 					}
