@@ -17,7 +17,7 @@ const allNavBtnsDesktop = document.querySelectorAll('.desktop-nav-btns');
 //===================
 const dropdownLinks = document.querySelector('.dropdown-box');
 const dropdownContainer = document.querySelector('.dropdown-container');
-// const frames = document.querySelectorAll('.frame');
+
 const linkElements = dropdownContainer.querySelectorAll('.link');
 let range = 360;
 
@@ -174,6 +174,49 @@ if (allNavBtnsDesktop !== null) {
 		});
 	});
 }
+
+const clock = () => {
+	let hours = document.querySelector('.hours');
+	let minutes = document.querySelector('.minutes');
+	let seconds = document.querySelector('.seconds');
+	let day = document.querySelector('.day');
+	let mounth = document.querySelector('.mounth');
+	let year = document.querySelector('.year');
+
+	let date = new Date();
+	let h = date.getHours();
+	let m = date.getMinutes();
+	let s = date.getSeconds();
+	let d = date.getDate();
+	let mo = date.getMonth();
+	let y = date.getFullYear();
+
+	const months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December',
+	];
+
+	hours.textContent = h < 10 ? `0${h}` : h;
+	minutes.textContent = m < 10 ? `0${m}` : m;
+	seconds.textContent = s < 10 ? `0${s}` : s;
+	day.textContent = d;
+	mounth.textContent = months[mo];
+	year.textContent = y;
+};
+
+setInterval(() => {
+	clock();
+}, 1000);
 
 if (backBtn !== null) {
 	backBtn.addEventListener('click', handleBack);
