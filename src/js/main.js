@@ -21,6 +21,8 @@ const dropdownContainer = document.querySelector('.dropdown-container');
 const linkElements = dropdownContainer.querySelectorAll('.link');
 let range = 360;
 
+const bannerSection = document.querySelector('.banner-section');
+
 const handleBurgerBtn = () => {
 	burgerBtn.classList.toggle('is-active');
 	dropdownMenu.classList.toggle('menu-active');
@@ -213,6 +215,19 @@ const clock = () => {
 	mounth.textContent = months[mo];
 	year.textContent = y;
 };
+
+const circleFollowingMouse = (e) => {
+	const circle = bannerSection.querySelector('.circle');
+	const x = e.pageX;
+	const y = e.pageY;
+
+	circle.style.left = x + 'px';
+	circle.style.top = y + 'px';
+
+	console.log(e, y);
+};
+
+bannerSection.addEventListener('mousemove', circleFollowingMouse);
 
 setInterval(() => {
 	clock();

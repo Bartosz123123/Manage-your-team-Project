@@ -43,6 +43,7 @@ html {
 .mobile-nav {
 	display: block;
 	.nav-box {
+		position: relative;
 		.box {
 			position: relative;
 			padding: 16px;
@@ -96,7 +97,10 @@ html {
 		}
 
 		.dropdown-menu {
-			position: relative;
+			position: absolute;
+			width: 100%;
+			background: #fff;
+			z-index: 100;
 			height: 0;
 			transition: height 0.5s, transform 0.5s;
 			overflow: hidden;
@@ -349,7 +353,9 @@ html {
 //================= NAV DESKTOP =========================
 .desktop-nav {
 	display: none;
+	width: 100vw;
 	.desktop-box {
+		position: relative;
 		.container {
 			display: flex;
 			justify-content: space-between;
@@ -425,6 +431,9 @@ html {
 		}
 
 		.desktop-dropdown {
+			position: absolute;
+			width: 100%;
+			z-index: 100;
 			.dropdown-container {
 				// display: flex;
 				max-height: 0;
@@ -441,10 +450,13 @@ html {
 						width: 70%;
 						box-shadow: rgba(9, 30, 66, 0.15) 0px 1.5rem 1rem -1rem inset;
 						// overflow: hidden;
+						background-color: #fff;
 
 						.box {
+							position: relative;
 							max-width: 694.39px;
 							margin-left: auto;
+							z-index: 20;
 
 							.title {
 								padding: 10px 0 20px 0;
@@ -742,6 +754,70 @@ html {
 
 // ===================== MAIN =============================
 .main {
+	.mobile-banner-section {
+		position: relative;
+		background: linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0%
+			0% / auto no-repeat scroll padding-box border-box rgb(82, 67, 170);
+
+		.banner-box {
+			.button-box {
+				padding: 80px 10px 10px;
+
+				text-align: center;
+				line-height: 1.25;
+				.banner-title {
+					padding-bottom: 8px;
+					font-size: 3.2rem;
+					color: #fff;
+					letter-spacing: -1px;
+					font-weight: 500;
+					// text-align: center;
+				}
+
+				.banner-text {
+					padding-bottom: 24px;
+					font-size: 2rem;
+					color: #fff;
+				}
+
+				.btn-link {
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					padding: 7px 10px 8px;
+					margin-bottom: 10px;
+					width: 100%;
+					height: 50px;
+					font-size: 1.6rem;
+					border-radius: 6px;
+					color: #fff;
+					text-decoration: none;
+					background-color: var(--link-color);
+				}
+			}
+
+			.cards-img-box {
+				padding: 10px;
+				height: 288px;
+				width: 100%;
+				background-image: url('https://images.ctfassets.net/rz1oowkt5gyp/75rDABL8fyMtNLlUAtBxrg/c5e145977a86c41c47e17c69410c64f7/TrelloUICollage_4x.png?w=1080');
+				background-position: center;
+				background-size: cover;
+			}
+		}
+
+		.circle {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, -175%);
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border: 2px solid grey;
+			pointer-events: none;
+		}
+	}
 	.clock {
 		position: fixed;
 		bottom: 50px;
@@ -751,7 +827,7 @@ html {
 		align-items: center;
 		flex-direction: column;
 		padding: 5px;
-		width: 150px;
+		width: 180px;
 		font-size: 1.6rem;
 		border-radius: 5px;
 		border: 1px solid var(--footer-color);
